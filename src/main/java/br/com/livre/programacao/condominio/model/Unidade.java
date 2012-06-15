@@ -21,7 +21,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "unidade"))
 public class Unidade implements Serializable {
-	String novo;
 	
 	/**
 	 * 
