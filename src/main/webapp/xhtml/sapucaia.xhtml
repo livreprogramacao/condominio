@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/condominio.xhtml">
+
+	<ui:define name="condominio">
+		<h2 class="font font-shadow">Portal residencial Sapucaia</h2>
+	</ui:define>
+
+	<ui:define name="sobre">
+		<h3 class="font">sobre</h3>
+		<p>Utilize este espaço para usufruir dos serviços do condomínio e
+			como um canal de comunicação entre os condônimos e o corpo diretivo
+			do condomínio Residencial Sapucaia.</p>
+	</ui:define>
+	<ui:define name="serviços">
+		<h3 class="font">serviços</h3>
+		<ul>
+			<li><A accesskey="b" href="/condominio/xhtml/chamado.jsf">Abertura de chamado técnico</A></li>
+			<li>Agendar salão/churrasqueira</li>
+			<li>Assembleia virtual</li>
+			<li>Cadastro de moradores</li>
+			<li>Fale conosco</li>
+			<li>Registro de ocorrências</li>
+		</ul>
+	</ui:define>
+	<ui:define name="avisos">
+		<h3 class="font">quadro de avisos</h3>
+		<p>
+			<strong><time datetime="2012-05-17T12:31:45+03:00">17
+					de Maio de 2012</time></strong><br /> Primeira versão do portal Residencial
+			Sapucaia.
+		</p>
+	</ui:define>
+</ui:composition>

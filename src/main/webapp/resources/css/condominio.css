@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/*
+Design padrão da página principal do aplicativo 
+*/
+#bloco_superior {
+	background-color: red;
+	padding-top: 110px;
+}
+
+#bloco_esquerda {
+	margin: 0 auto;
+	border: 1px solid #666666;
+	width: 265px; /* subtract 40px from banner width for padding */
+	height: 400px;
+	padding: 0px 5px 0px 0px;
+}
+
+#bloco_direita {
+	float: right;
+	width: 225px;
+	border: 1px solid #666666;
+	background: #EAECEE;
+	padding: 0 15px 5px 15px;
+	clear: both;
+}
+
+#bloco_inferior {
+	background-color: blue;
+	clear: both;
+	text-align: center;
+	color: #666666;
+	font-size: 0.85em;
+	padding: 3em 0 0 0;
+}
+
+#content {
+	display: table;
+	width: 960px;
+	height: 300px;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+aside {
+	display: table-cell;
+	width: 300px;
+}
+
+#mainContent {
+	display: table-cell;
+	width: 620px;
+	padding-right: 22px;
+}
+
+/*
+classes
+*/
+.cor_verde {
+	color: green;
+}
