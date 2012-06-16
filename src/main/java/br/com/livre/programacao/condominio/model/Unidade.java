@@ -47,7 +47,7 @@ public class Unidade implements Serializable {
 	@Pattern(regexp = "[AB]", message = "o tipo deve contém somente A ou B")
 	String tipo;
 	
-	String fração;
+	String fracao;
 
 	@Override
 	public int hashCode() {
@@ -119,12 +119,12 @@ public class Unidade implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public String getFração() {
-		return fração;
+	public String getFracao() {
+		return fracao;
 	}
 
-	public void setFração(String fração) {
-		this.fração = fração;
+	public void setFracao(String fracao) {
+		this.fracao = fracao;
 	}
 
 }
