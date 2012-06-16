@@ -11,6 +11,8 @@ div.content.inactive {
 ol#toc {
     height: 2em;
     list-style: none;
+    list-style: url("");
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
