@@ -4,7 +4,10 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"> 
 
-<h:head></h:head> 
+<h:head>
+	<!-- Criado por oracle dia 16/06/2012 às 08:33:42 -->
+	<meta charset="UTF-8"></meta>
+</h:head> 
 <body> 
 		<h:form id="gerir">
 			<h2>Cadastro de unidades</h2>
@@ -71,10 +74,6 @@
 		<h:dataTable var="_member" value="#{unidades}"
 			rendered="#{not empty unidades}">
 			<h:column>
-				<f:facet name="header">Id</f:facet>
-                #{_member.id}
-            </h:column>
-			<h:column>
 				<f:facet name="header">Bloco</f:facet>
                 #{_member.bloco}
             </h:column>
@@ -94,15 +93,7 @@
 				<f:facet name="header">Fração</f:facet>
                 #{_member.fracao}
             </h:column>
-			<h:column>
-				<f:facet name="header">REST URL</f:facet>
-				<a href="#{request.contextPath}/rest/unidades/#{_member.id}">/rest/unidades/#{_member.id}</a>
-			</h:column>
-			<f:facet name="footer">
-                REST URL for all unidades: <a
-					href="#{request.contextPath}/rest/unidades">/rest/unidades</a>
-			</f:facet>
 		</h:dataTable>
 
 </body> 
-</html>
+>

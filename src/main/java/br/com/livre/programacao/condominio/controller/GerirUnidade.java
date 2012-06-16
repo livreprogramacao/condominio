@@ -4,13 +4,13 @@ import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
+import javax.enterprise.event.Event;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 
-import br.com.livre.programacao.condominio.model.Unidade;
 import br.com.livre.programacao.condominio.model.Unidade;
 
 @Stateful
@@ -22,6 +22,9 @@ public class GerirUnidade {
 
 	@Inject
 	private EntityManager em;
+
+	@Inject
+	private Event<Unidade> unidadeEventSrc;
 
 	private Unidade newUnidade;
 
@@ -40,7 +43,7 @@ public class GerirUnidade {
 	public void incluir() throws Exception {
 		log.info("Incluindo a unidade " + newUnidade.getUnidade());
 		em.persist(newUnidade);
-		//memberEventSrc.fire(newUnidade);
+		unidadeEventSrc.fire(newUnidade);
 		initNewUnidade();
 	}
 }
