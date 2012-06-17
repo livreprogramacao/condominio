@@ -2,7 +2,7 @@
 <html
 		xmlns:f="http://java.sun.com/jsf/core"
 		xmlns:h="http://java.sun.com/jsf/html"
->
+		xmlns:p="http://primefaces.org/ui">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>My Homepage</title>
@@ -20,71 +20,65 @@
 		</ol>
 
 		<div class="content" id="page-1">
-			<fieldset>
-				<legend>Detalhes da unidade</legend>
-				<p>
-					<label for="bloco">Bloco</label>
-					<h:inputText id="bloco" value="#{newUnidade.bloco}" /> 
+		
+			<p:panel id="unidade" header="AutoComplete" toggleable="true">
+				<h:panelGrid columns="2" cellpadding="5">
+				
+					<h:outputLabel for="bloco" value="Bloco" />
+					<h:inputText id="bloco" valu1="#{newUnidade.bloco}" /> 
 					<h:message for="bloco" errorClass="invalid" />
-				</p>
-				<p>
-					<label for="unidade">Unidade</label>
+					
+					<h:outputLabel for="unidade" value="Unidade" />
 					<h:inputText id="unidade" value="#{newUnidade.unidade}" /> 
 					<h:message for="unidade" errorClass="invalid" />
-				</p>
-				<p>
-					<label for="nome">Nome</label>
+					
+					<h:outputLabel for="nome" value="Nome" />
 					<h:inputText id="nome" value="#{newUnidade.nome}" /> 
 					<h:message for="nome" errorClass="invalid" />
-				</p>
-				<p>
-					<label for="tipo">Tipo</label>
+					
+					<h:outputLabel for="tipo" value="Tipo" />
 					<h:inputText id="tipo" value="#{newUnidade.tipo}" /> 
 					<h:message for="tipo" errorClass="invalid" />
-				</p>
-				<p>
-					<label for="telefone">Telefone</label> <input type="tel"
-						id="telefone" size="16" pattern="\d{10}"
-						placeholder="(99) 9999-9999" required="required" />
-				</p>
-				<p>
-					<label for="morador">Morador</label> <input type="radio"
-						name="morador" value="p"></input> <input type="radio"
-						name="morador" value="i">Inquilino</input>
-				</p>
-				<p>
-					<label for="email">e-mail</label> <input type="email" id="email"
-						size="50" placeholder="usuario@provedor.com.br"
-						required="required" />
-				</p>
-				<p>
-					<label for="unidade">Fração</label>
+					
+					<h:outputLabel for="telefone" value="Telefone" />
+					<input id="telefone" type="tel" size="16" pattern="\d{10}" placeholder="(99) 9999-9999" required="required" />
+					<h:message for="telefone" errorClass="invalid" />
+						
+				    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+				
+				        <h:outputText value="Morador: " />
+				        <p:selectOneRadio id="morador" value="#{formBean.number}">
+				            <f:selectItem itemLabel="Proprietário" itemValue="1" />
+				            <f:selectItem itemLabel="Inquilino" itemValue="2" />
+				            <f:selectItem itemLabel="Outro" itemValue="3" />
+				        </p:selectOneRadio>
+				
+				    </h:panelGrid>					
+				    
+					<h:outputLabel for="email" value="e-mail" />
+					<input type="email" id="email" size="50" placeholder="usuario@provedor.com.br" required="required" />
+					<h:message for="email" errorClass="invalid" />
+						
+					<h:outputLabel for="fracao" value="Fração" />
 					<h:inputText id="fracao" value="#{newUnidade.fracao}" /> 
 					<h:message for="fracao" errorClass="invalid" />
-				</p>
-				<p>
-					<label for="obs">Observações</label> <input type="text" id="obs"
-						size="50" required="required" />
-				</p>
-			</fieldset>
+					
+					<h:outputLabel for="observacao" value="Observações" />
+					<input type="text" id="obs" size="50" required="required" />
+					<h:message for="observacao" errorClass="invalid" />
+				</h:panelGrid>
+			</p:panel>
 		</div>
 		<div class="content" id="page-2">
 			<fieldset>
 				<legend>Veículos com acesso ao condomínio</legend>
-				<p>
-					<label> <input type="checkbox" name="topping" value="bacon" />Bacon
-					</label>
-				</p>
 			</fieldset>
 		</div>
 		<div class="content" id="page-3">
 			<fieldset>
 				<legend>Pessoas que residem na unidade</legend>
 				<p>
-					<label>Nome</label> <input type="text" name="topping" />
-				</p>
-				<p>
-					<label>Parentesco</label> <select>
+					<select>
 						<option selected="selected">Selecione...</option>
 						<option>Esposa</option>
 						<option>Filho(a)</option>
@@ -125,10 +119,6 @@
 		<div class="content" id="page-4">
 			<fieldset>
 				<legend>Pessoas a serem contactadas em caso de emergência.</legend>
-				<p>
-					<label> <input type="checkbox" name="topping" value="bacon" />Bacon
-					</label>
-				</p>
 			</fieldset>
 		</div>
 		<script src="/condominio/xhtml/unidade/activatables.js"

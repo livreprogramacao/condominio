@@ -138,6 +138,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- primefaces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -215,6 +222,15 @@
 						<enabled>false</enabled>
 					</snapshots>
 				</repository>
+
+				<!-- primefaces -->
+				<repository>
+					<id>prime-repo</id>
+					<name>PrimeFaces Maven Repository</name>
+					<url>http://repository.primefaces.org</url>
+					<layout>overcast</layout>
+				</repository>
+				
 			</repositories>
 
 			<pluginRepositories>
