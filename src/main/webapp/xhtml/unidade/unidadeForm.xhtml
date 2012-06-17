@@ -21,51 +21,39 @@
 
 		<div class="content" id="page-1">
 		
-			<p:panel id="unidade" header="AutoComplete" toggleable="true">
+			<p:panel id="unidade">
 				<h:panelGrid columns="2" cellpadding="5">
 				
 					<h:outputLabel for="bloco" value="Bloco" />
 					<h:inputText id="bloco" valu1="#{newUnidade.bloco}" /> 
-					<h:message for="bloco" errorClass="invalid" />
 					
 					<h:outputLabel for="unidade" value="Unidade" />
 					<h:inputText id="unidade" value="#{newUnidade.unidade}" /> 
-					<h:message for="unidade" errorClass="invalid" />
 					
 					<h:outputLabel for="nome" value="Nome" />
 					<h:inputText id="nome" value="#{newUnidade.nome}" /> 
-					<h:message for="nome" errorClass="invalid" />
 					
 					<h:outputLabel for="tipo" value="Tipo" />
 					<h:inputText id="tipo" value="#{newUnidade.tipo}" /> 
-					<h:message for="tipo" errorClass="invalid" />
 					
 					<h:outputLabel for="telefone" value="Telefone" />
 					<input id="telefone" type="tel" size="16" pattern="\d{10}" placeholder="(99) 9999-9999" required="required" />
-					<h:message for="telefone" errorClass="invalid" />
-						
-				    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-				
-				        <h:outputText value="Morador: " />
-				        <p:selectOneRadio id="morador" value="#{formBean.number}">
-				            <f:selectItem itemLabel="Proprietário" itemValue="1" />
-				            <f:selectItem itemLabel="Inquilino" itemValue="2" />
-				            <f:selectItem itemLabel="Outro" itemValue="3" />
-				        </p:selectOneRadio>
-				
-				    </h:panelGrid>					
+			
+			        <h:outputText value="Morador: " />
+			        <p:selectOneRadio id="morador" value="#{formBean.number}">
+			            <f:selectItem itemLabel="Proprietário" itemValue="1" />
+			            <f:selectItem itemLabel="Inquilino" itemValue="2" />
+			            <f:selectItem itemLabel="Outro" itemValue="3" />
+			        </p:selectOneRadio>
 				    
 					<h:outputLabel for="email" value="e-mail" />
 					<input type="email" id="email" size="50" placeholder="usuario@provedor.com.br" required="required" />
-					<h:message for="email" errorClass="invalid" />
 						
 					<h:outputLabel for="fracao" value="Fração" />
 					<h:inputText id="fracao" value="#{newUnidade.fracao}" /> 
-					<h:message for="fracao" errorClass="invalid" />
 					
 					<h:outputLabel for="observacao" value="Observações" />
 					<input type="text" id="obs" size="50" required="required" />
-					<h:message for="observacao" errorClass="invalid" />
 				</h:panelGrid>
 			</p:panel>
 		</div>
