@@ -12,7 +12,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/** Cadastro de Unidades
+/** Modelo de dados para gerenciar o cadastro de unidades do condominio.
  * 
  * @author Fábio Santos Almeida
  *
