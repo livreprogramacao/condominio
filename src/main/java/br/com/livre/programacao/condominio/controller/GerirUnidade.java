@@ -41,9 +41,11 @@ public class GerirUnidade {
 	}
 
 	public void incluir() throws Exception {
-		log.info("Incluindo a unidade " + newUnidade.getUnidade());
+		log.info("Incluir unidade: " + newUnidade.getUnidade());
 		em.persist(newUnidade);
 		unidadeEventSrc.fire(newUnidade);
 		initNewUnidade();
+		log.info("Unidade incluida com sucesso.");
 	}
+
 }

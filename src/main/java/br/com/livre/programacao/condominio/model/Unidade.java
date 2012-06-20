@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "unidade"))
+@Table(schema="CONDOMINIO", name="UNIDADE", uniqueConstraints = @UniqueConstraint(columnNames = "unidade"))
 public class Unidade implements Serializable {
 	
 	/**

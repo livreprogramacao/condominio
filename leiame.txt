@@ -1,0 +1,31 @@
+serviços
+	Abertura de chamado técnico
+	Agendar evento no clube.
+	Assembleia virtual
+	Cadastro de unidades
+	Fale conosco
+	Registro de ocorrências
+
+	Abertura de chamado técnico
+		tabela: chamado
+		campos: id, unidade, tmsp_chamado, TECNICO [telefone, jardim, segurança], 
+	
+	Agendar salão/churrasqueira
+		tabela: evento
+		campos: id, unidade, tmsp_evento
+	
+	Assembleia virtual
+		tabela: assembleia
+		campos: id, tmsp_assembleia
+	
+	Cadastro de unidades
+		tabela: unidade
+		campos: id, unidade, PESSOAS [residentes, parentes, terceiros, prestadores de serviços], veículos [fabricante, modelo]	
+	
+	Fale conosco
+		tabela: corpo_diretivo
+		campos: id, unidade, tmsp_inicio, dt_termino
+	
+	Registro de ocorrências
+		tabela: ocorrencia
+		campos: id, unidade, tmsp_ocorrencia, descrição
