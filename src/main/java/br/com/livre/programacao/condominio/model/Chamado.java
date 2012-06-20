@@ -20,7 +20,7 @@ import br.com.livre.programacao.condominio.model.Unidade;
  */
 @Entity
 @XmlRootElement
-@Table(schema="CONDOMINIO", name="CHAMADO")
+@Table(name="CHAMADO")
 public class Chamado implements Serializable {
 
 	/**

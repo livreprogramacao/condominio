@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
-@Table(schema="CONDOMINIO", name="CORPO_DIRETIVO")
+@Table(name="CORPO_DIRETIVO")
 public class Mensagem implements Serializable {
 
 	/**

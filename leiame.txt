@@ -8,15 +8,15 @@ serviços
 
 	Abertura de chamado técnico
 		tabela: chamado
-		campos: id, unidade, tmsp_chamado, TECNICO [telefone, jardim, segurança], 
+		campos: id, unidade_fk, dt_chamado, TECNICO [telefone, jardim, segurança], status, descrição, solução 
 	
 	Agendar salão/churrasqueira
 		tabela: evento
-		campos: id, unidade, tmsp_evento
+		campos: id, unidade_fk, dt_evento
 	
 	Assembleia virtual
 		tabela: assembleia
-		campos: id, tmsp_assembleia
+		campos: id, dt_assembleia
 	
 	Cadastro de unidades
 		tabela: unidade
@@ -24,8 +24,8 @@ serviços
 	
 	Fale conosco
 		tabela: corpo_diretivo
-		campos: id, unidade, tmsp_inicio, dt_termino
+		campos: id, unidade_fk, dt_inicio, dt_termino
 	
 	Registro de ocorrências
 		tabela: ocorrencia
-		campos: id, unidade, tmsp_ocorrencia, descrição
+		campos: id, unidade_fk, dt_ocorrencia, descrição

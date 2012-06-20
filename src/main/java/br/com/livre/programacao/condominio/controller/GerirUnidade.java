@@ -31,7 +31,6 @@ public class GerirUnidade {
 	@PostConstruct
 	public void initNewUnidade() {
 		newUnidade = new Unidade();
-		newUnidade.setBloco("0");
 	}
 
 	@Produces
@@ -41,7 +40,7 @@ public class GerirUnidade {
 	}
 
 	public void incluir() throws Exception {
-		log.info("Incluir unidade: " + newUnidade.getUnidade());
+		log.info("Incluir unidade: " + newUnidade);
 		em.persist(newUnidade);
 		unidadeEventSrc.fire(newUnidade);
 		initNewUnidade();

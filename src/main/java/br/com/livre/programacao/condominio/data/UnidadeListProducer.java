@@ -35,7 +35,7 @@ public class UnidadeListProducer {
 	}
 
 	public void onUnidadeListChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final Unidade unidade) {
-		log.info("A unidade " + unidade.getUnidade() + " foi modificada... Atualizando lista de unidades.");
+		log.info("A unidade " + unidade + " foi modificada... Atualizando lista de unidades.");
 		retrieveAllUnidadesOrderedByUnidade();
 	}
 
