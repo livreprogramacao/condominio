@@ -45,3 +45,8 @@ span.invalid {
 	padding-left: 3px;
 	color: red;
 }
+
+/* definir o tamanho das fontes dos controles PrimeFaces. */
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 90% !important;
+}
