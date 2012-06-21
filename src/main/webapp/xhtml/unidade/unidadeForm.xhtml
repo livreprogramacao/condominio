@@ -21,23 +21,23 @@
 
 		<div class="content" id="page-1">
 		
-			<p:panel id="unidade">
-				<h:panelGrid columns="2" cellpadding="5">
+			<p:panel id="panelUnidade">
+				<h:panelGrid id="panelGridUnidade" columns="2" cellpadding="5">
 				
 					<h:outputLabel for="bloco" value="Bloco" />
-					<h:inputText id="bloco" valu1="#{newUnidade.bloco}" /> 
+					<p:inputText id="bloco" valu1="#{newUnidade.bloco}" /> 
 					
 					<h:outputLabel for="unidade" value="Unidade" />
-					<h:inputText id="unidade" value="#{newUnidade.unidade}" /> 
+					<p:inputText id="unidade" value="#{newUnidade.unidade}" /> 
 					
 					<h:outputLabel for="nome" value="Nome" />
-					<h:inputText id="nome" value="#{newUnidade.nome}" /> 
+					<p:inputText id="nome" value="#{newUnidade.nome}" /> 
 					
 					<h:outputLabel for="tipo" value="Tipo" />
-					<h:inputText id="tipo" value="#{newUnidade.tipo}" /> 
+					<p:inputText id="tipo" value="#{newUnidade.tipo}" /> 
 					
 					<h:outputLabel for="telefone" value="Telefone" />
-					<input id="telefone" type="tel" size="16" pattern="\d{10}" placeholder="(99) 9999-9999" required="required" />
+					<p:inputText id="telefone" type="tel" size="16" pattern="\d{10}" placeholder="(99) 9999-9999" required="required" />
 			
 			        <h:outputText value="Morador: " />
 			        <p:selectOneRadio id="morador" value="#{formBean.number}">
@@ -47,13 +47,15 @@
 			        </p:selectOneRadio>
 				    
 					<h:outputLabel for="email" value="e-mail" />
-					<input type="email" id="email" size="50" placeholder="usuario@provedor.com.br" required="required" />
+					<p:inputText id="email" size="50" />
+					<p:watermark for="email" value="usuario@provedor.com.br" />
+					
 						
 					<h:outputLabel for="fracao" value="Fração" />
-					<h:inputText id="fracao" value="#{newUnidade.fracao}" /> 
+					<p:inputText id="fracao" value="#{newUnidade.fracao}" /> 
 					
-					<h:outputLabel for="observacao" value="Observações" />
-					<input type="text" id="obs" size="50" required="required" />
+					<h:outputLabel for="observacao" value="Observacao" />
+					<p:inputText id="observacao" type="text" size="50" required="true" requiredMessage="" />
 				</h:panelGrid>
 			</p:panel>
 		</div>
