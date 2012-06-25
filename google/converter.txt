@@ -1,0 +1,6 @@
+http://balusc.blogspot.com.br/2007/09/objects-in-hselectonemenu.html
+http://stackoverflow.com/questions/3621251/how-to-write-a-custom-converter-when-working-with-primefaces-components-that-co
+http://www.mkyong.com/jsf2/custom-converter-in-jsf-2-0/
+http://stackoverflow.com/questions/6848970/how-to-prepopulate-a-hselectonemenu-from-a-db]
+http://stackoverflow.com/questions/11088388/how-to-dispaly-value-in-hselectonemenu
+http://jdevelopment.nl/automatic-toobject-conversion-jsf-selectonemenu/

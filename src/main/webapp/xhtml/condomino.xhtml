@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+
+	<ui:composition template="/WEB-INF/templates/default.xhtml">
+
+		<ui:define name="colunas">
+
+			<p:tabView id="tabView">
+
+				<p:tab id="tab1" title="Proprietário">
+					<p:panelGrid columns="2" cellpadding="5">
+						<h:outputLabel for="bloco" value="Bloco: *" />
+				        <p:selectOneMenu id="bloco" value="#{autoCompleteBean.selectedPlayer1}" effect="fade" converter="player">
+				            <f:selectItem itemLabel="Select One" itemValue="" />
+				            <f:selectItems value="#{autoCompleteBean.players}" var="player" itemLabel="#{player.name}" itemValue="#{player}"/>
+				        </p:selectOneMenu>
+
+						<h:outputLabel for="unidade" value="Unidade: *" />
+						<p:inputText id="unidade" value="#{newUnidade.unidade}"
+							label="unidade" size="4" />
+
+						<h:outputLabel for="tipo" value="Tipo: *" />
+						<p:inputText id="tipo" value="#{newUnidade.tipo}" label="tipo" size="2" />
+
+						<h:outputLabel for="nome" value="Nome: *" />
+						<p:inputText id="nome" value="#{newUnidade.nome}" label="nome" size="50" />
+
+						<h:outputLabel for="morador" value="Morador: *" />
+						<p:selectOneRadio id="morador" value="1" label="morador">
+							<f:selectItem itemLabel="Proprietário" itemValue="1" />
+							<f:selectItem itemLabel="Locatário" itemValue="2" />
+						</p:selectOneRadio>
+
+						<h:outputLabel value="Telefones:" />
+						<p:panelGrid columns="3" cellpadding="5">
+							<h:outputLabel for="telefone1" value="Residencial: *" />
+							<p:inputMask id="telefone1" value="" label="telefone1" mask="(99) 9999-9999" size="12" />
+							<p:watermark for="telefone1" value="(99) 9999-9999" />
+
+							<h:outputLabel for="telefone2" value="Celular:" />
+							<p:inputMask id="telefone2" value="" label="telefone2" mask="(99) 9999-9999" size="12" />
+							<p:watermark for="telefone2" value="(99) 9999-9999" />
+
+							<h:outputLabel for="telefone3" value="Comercial:" />
+							<p:inputMask id="telefone3" value="" label="telefone3" mask="(99) 9999-9999" size="12" />
+							<p:watermark for="telefone3" value="(99) 9999-9999" />
+						</p:panelGrid>
+
+						<h:outputLabel for="email" value="E-mail: *" />
+						<p:panelGrid columns="2" cellpadding="5">
+							<p:inputText id="email" size="50" label="email" />
+							<p:watermark for="email" value="usuario@provedor.com.br" />
+						</p:panelGrid>
+					</p:panelGrid>
+
+				</p:tab>
+
+				<p:tab id="tab2" title="Veículo">
+					<p:panelGrid columns="2" cellpadding="5">
+						<h:outputLabel for="fabricante" value="Fabricante: *" />
+						<p:inputText id="fabricante" value="" label="Fabricante" />
+
+						<h:outputLabel for="modelo" value="Modelo: *" />
+						<p:inputText id="modelo" value="" required="true" label="Modelo" />
+
+						<h:outputLabel for="cor" value="Cor: *" />
+						<p:inputText id="cor" value="" required="true" label="Cor" />
+
+						<h:outputLabel for="placa" value="Placa *" />
+						<p:inputText id="placa" value="" required="true" label="Placa" />
+					</p:panelGrid>
+				</p:tab>
+
+				<p:tab id="tab3" title="Moradores">
+					<p:panelGrid columns="2" cellpadding="5">
+						<h:outputLabel for="parentesco" value="Parentesco: *" />
+						<p:inputText id="parentesco" value="" required="true"
+							label="Parentesco" />
+
+						<h:outputLabel for="nomeMorador" value="Nome: *" />
+						<p:inputText id="nomeMorador" value="" label="Nome" />
+
+						<h:outputLabel for="dtNascimento" value="Data de Nascimento:*" />
+						<p:inputMask id="dtNascimento" value="" label="Data de Nascimento" mask="99/99/9999"
+							required="true" />
+
+						<h:outputLabel for="celular" value="Celular:" />
+						<p:inputText id="celular" value="" label="Celular" required="true" />
+					</p:panelGrid>
+				</p:tab>
+
+				<p:tab id="tab4" title="Terceiros">
+					<p:panelGrid columns="2" cellpadding="5">
+						<h:outputLabel for="categoria" value="Categoria *" />
+						<p:inputText id="categoria" value="" label="categoria" />
+
+						<h:outputLabel for="dias" value="Quais dias tem autorização para entrar: *" />
+						<p:inputText id="dias" value="" required="true" label="dias" />
+					</p:panelGrid>
+				</p:tab>
+
+			</p:tabView>
+
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+
+</html>

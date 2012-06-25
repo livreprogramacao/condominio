@@ -7,13 +7,7 @@
 <h:head>
 	<title>Condomínio Parque dos Sonhos#{msgs.windowTitle}</title>
 	<h:outputStylesheet name="css/cardeo-three.css" />
-	<h:outputStylesheet name="css/tabs.css" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <style type="text/css">
-		div.inactive {
-			display: none;
-		}
-    </style>	
 </h:head>
 
 <h:body>
@@ -41,7 +35,11 @@
 			</div>
 		</div>
 
-		<ui:insert name="colunas" />
+		<div id="columns">
+			<div id="main">
+				<ui:insert name="colunas" />
+			</div> <!-- main end -->
+		</div> <!-- columns end -->
 
 		<footer id="footer">
 			<div class="footerbox">

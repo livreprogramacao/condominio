@@ -257,15 +257,9 @@ LINKS
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/*-----------------------------------------------------
+ definir o tamanho das fontes dos controles PrimeFaces. 
+-----------------------------------------------------*/
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 90% !important;
+}

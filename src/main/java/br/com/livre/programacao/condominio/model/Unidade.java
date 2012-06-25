@@ -1,16 +1,21 @@
 package br.com.livre.programacao.condominio.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.primefaces.examples.domain.Player;
 
 /** Modelo de dados para gerenciar o cadastro de unidades do condominio.
  * 
@@ -49,8 +54,15 @@ public class Unidade implements Serializable {
 	
 	Double fracao;
 	
+	@Transient
+	private List<Player> blocos = new ArrayList<Player>(10);
+
 	public Unidade() {
 		this.bloco = 0;
+		
+		for(Long x=0L; x<10; x++){
+			blocos.add(new Player(""+x));
+		}
 	}
 
 	@Override
@@ -215,5 +227,11 @@ public class Unidade implements Serializable {
 		this.fracao = fracao;
 	}
 
-	
+	/**
+	 * @return the blocos
+	 */
+	public List<Player> getBlocos() {
+		return blocos;
+	}
+
 }

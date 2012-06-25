@@ -27,10 +27,11 @@ public class GerirUnidade {
 	private Event<Unidade> unidadeEventSrc;
 
 	private Unidade newUnidade;
-
+	
 	@PostConstruct
 	public void initNewUnidade() {
 		newUnidade = new Unidade();
+		
 	}
 
 	@Produces

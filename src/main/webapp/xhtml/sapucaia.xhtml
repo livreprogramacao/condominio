@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	template="/WEB-INF/templates/condominio.xhtml">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+<ui:composition template="/WEB-INF/templates/condominio.xhtml">
 
 	<ui:define name="condominio">
 		<h2 class="font font-shadow">Portal residencial Sapucaia</h2>
@@ -25,8 +27,7 @@
 					salão/churrasqueira</a></li>
 			<li><a accesskey="b" href="/condominio/xhtml/assembleia.jsf">Assembleia
 					virtual</a></li>
-			<li><a accesskey="b" href="/condominio/xhtml/unidade.jsf">Cadastro
-					de unidades</a></li>
+			<li><a accesskey="b" href="/condominio/xhtml/condomino.jsf">Condôminos</a></li>
 			<li><a accesskey="b" href="/condominio/xhtml/faleConosco.jsf">Fale
 					conosco</a></li>
 			<li><a accesskey="b" href="/condominio/xhtml/ocorrencias.jsf">Registro
@@ -42,3 +43,5 @@
 		</p>
 	</ui:define>
 </ui:composition>
+
+</html>

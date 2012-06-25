@@ -10,5 +10,8 @@
 
    <!-- Write your navigation rules here. You are encouraged to use CDI for 
       creating @Named managed beans. -->
-
+	<converter>
+	    <converter-id>player</converter-id>
+	    <converter-class>org.primefaces.examples.view.PlayerConverter</converter-class>
+	</converter>
 </faces-config>
