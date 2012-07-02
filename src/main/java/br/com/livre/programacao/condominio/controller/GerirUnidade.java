@@ -9,9 +9,9 @@ import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
 
 import br.com.livre.programacao.condominio.model.Unidade;
+import br.com.livre.programacao.condominio.repository.CondominoRepository;
 
 @Stateful
 @Model
@@ -20,13 +20,15 @@ public class GerirUnidade {
 	@Inject
 	private Logger log;
 
-	@Inject
-	private EntityManager em;
+//	@Inject
+//	private EntityManager em;
 
 	@Inject
 	private Event<Unidade> unidadeEventSrc;
 
 	private Unidade newUnidade;
+	
+	private CondominoRepository repository;
 	
 	@PostConstruct
 	public void initNewUnidade() {
@@ -42,7 +44,7 @@ public class GerirUnidade {
 
 	public void incluir() throws Exception {
 		log.info("Incluir unidade: " + newUnidade);
-		em.persist(newUnidade);
+		repository.salvar(newUnidade);
 		unidadeEventSrc.fire(newUnidade);
 		initNewUnidade();
 		log.info("Unidade incluida com sucesso.");
