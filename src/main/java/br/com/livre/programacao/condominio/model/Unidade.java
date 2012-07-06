@@ -59,6 +59,8 @@ public class Unidade implements Serializable {
 
 	public Unidade() {
 		this.bloco = 0;
+		this.tipo = "A";
+		this.fracao = 1.304;
 		
 		for(Long x=0L; x<10; x++){
 			blocos.add(new Player(""+x));
