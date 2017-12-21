@@ -1,0 +1,109 @@
+<h:form>
+
+    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+
+        <h:outputText value="Basic Usage: " />
+        <p:selectOneMenu value="#{buttonBean.number}">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Option 1" itemValue="1" />
+            <f:selectItem itemLabel="Option 2" itemValue="2" />
+            <f:selectItem itemLabel="Option 3" itemValue="3" />
+        </p:selectOneMenu>
+
+        <h:outputText value="Editable: " />
+        <p:selectOneMenu value="#{pprBean.city}" effect="fold" editable="true">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItems value="#{pprBean.cities}" />
+        </p:selectOneMenu>
+
+        <h:outputText value="Pojo: " />
+        <p:selectOneMenu value="#{autoCompleteBean.selectedPlayer1}" effect="fade" converter="player">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItems value="#{autoCompleteBean.players}" var="player" itemLabel="#{player.name}" itemValue="#{player}"/>
+        </p:selectOneMenu>
+
+				        <p:selectOneMenu id="bloco" value="#{newUnidade.bloco}" effect="fade" converter="player">
+				            <f:selectItem itemLabel="Selecione um bloco" itemValue="" />
+				            <f:selectItems value="#{newUnidade.blocos}" var="bloco" itemLabel="#{bloco.name}" itemValue="#{bloco}"/>
+				        </p:selectOneMenu>
+				
+
+        <h:outputText value="Custom Content:" />
+        <p:selectOneMenu value="#{autoCompleteBean.selectedPlayer2}" converter="player"
+                         effect="fade" var="p" style="width:160px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItems value="#{autoCompleteBean.players}" var="player" itemLabel="#{player.name}" itemValue="#{player}"/>
+
+            <p:column>
+                <p:graphicImage value="/images/barca/#{p.photo}" width="40" height="50"/>
+            </p:column>
+
+            <p:column>
+                #{p.name} - #{p.number}
+            </p:column>
+        </p:selectOneMenu>
+
+    </h:panelGrid>
+
+    <p:commandButton value="Submit" update="display" oncomplete="dlg.show()" />
+
+    <p:dialog header="Selected Values" modal="true" showEffect="fade" hideEffect="fade" widgetVar="dlg">
+        <h:panelGrid columns="1" id="display">
+            <h:outputText value="Value 1: #{buttonBean.number}" />
+
+            <h:outputText value="Value 2: #{pprBean.city}" />
+
+            <h:outputText value="Value 3: #{autoCompleteBean.selectedPlayer1.name}" rendered="#{not empty autoCompleteBean.selectedPlayer1}" />
+
+            <h:outputText value="Value 4: #{autoCompleteBean.selectedPlayer2.name}" rendered="#{not empty autoCompleteBean.selectedPlayer2}" />
+        </h:panelGrid>
+    </p:dialog>
+
+</h:form>
+					
+					
+					
+Defines a many-valued association with one-to-many multiplicity.
+
+If the collection is defined using generics to specify the element type, the associated target entity type need not be specified; otherwise the target entity class must be specified. If the relationship is bidirectional, the mappedBy element must be used to specify the relationship field or property of the entity that is the owner of the relationship.
+
+The OneToMany annotation may be used within an embeddable class contained within an entity class to specify a relationship to a collection of entities. If the relationship is bidirectional, the mappedBy element must be used to specify the relationship field or property of the entity that is the owner of the relationship. When the collection is a java.util.Map, the cascade element and the orphanRemoval element apply to the map value.
+
+    Example 1: One-to-Many association using generics
+
+    // In Customer class:
+
+    @OneToMany(cascade=ALL, mappedBy="customer")
+    public Set<Order> getOrders() { return orders; }
+
+    In Order class:
+
+    @ManyToOne
+    @JoinColumn(name="CUST_ID", nullable=false)
+    public Customer getCustomer() { return customer; }
+
+
+    Example 2: One-to-Many association without using generics
+
+    // In Customer class:
+
+    @OneToMany(targetEntity=com.acme.Order.class, cascade=ALL,
+                mappedBy="customer")
+    public Set getOrders() { return orders; }
+
+    // In Order class:
+
+    @ManyToOne
+    @JoinColumn(name="CUST_ID", nullable=false)
+    public Customer getCustomer() { return customer; }
+
+
+    Example 3: Unidirectional One-to-Many association using a foreign key mapping
+
+    // In Customer class:
+
+    @OneToMany(orphanRemoval=true)
+    @JoinColumn(name="CUST_ID") // join column is in table for Order
+    public Set<Order> getOrders() {return orders;}
+
+ 					
